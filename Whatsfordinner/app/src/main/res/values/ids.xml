@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="dish1" type="id"/>
+    <item name="dish2" type="id"/>
+    <item name="dish3" type="id"/>
+    <item name="dish4" type="id"/>
+    <item name="dish5" type="id"/>
+    <item name="dish6" type="id"/>
+    <item name="dish7" type="id"/>
+    <item name="dish8" type="id"/>
+    <item name="dish9" type="id"/>
+    <item name="dish10" type="id"/>
+    <item name="dish11" type="id"/>
+    <item name="dish12" type="id"/>
+    <item name="dish13" type="id"/>
+    <item name="dish14" type="id"/>
+    <item name="dish15" type="id"/>
+    <item name="dish16" type="id"/>
+    <item name="dish17" type="id"/>
+    <item name="dish18" type="id"/>
+    <item name="dish19" type="id"/>
+    <item name="dish20" type="id"/>
+
+
+</resources>
