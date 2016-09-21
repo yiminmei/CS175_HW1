@@ -17,6 +17,7 @@ import android.widget.Toast;
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+import android.widget.ImageView;
 
 public class NewDishActivity extends AppCompatActivity {
     private Button pictureButton;
@@ -33,6 +34,7 @@ public class NewDishActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_dish);
         initialize();
+
 
         nameText1.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
@@ -117,10 +119,6 @@ public class NewDishActivity extends AppCompatActivity {
 
         setResult(NewDishActivity.RESULT_OK,returnintent);
         finish();
-
-    }
-    public void getPicture(View view){
-        //to be finished later
 
     }
 

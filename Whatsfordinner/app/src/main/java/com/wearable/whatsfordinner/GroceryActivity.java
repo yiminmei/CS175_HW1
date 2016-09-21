@@ -18,6 +18,23 @@ import java.util.ArrayList;
 public class GroceryActivity extends ListActivity {
     private ArrayList<Dish> selecteddishes;
     private ArrayList<String> allIngredients;
+    private String[] needtobuy;
+    private int changedlocation=-1;
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==9999){
+            if(resultCode==RESULT_OK){
+                needtobuy[changedlocation]=data.getStringExtra("info");
+                setListAdapter(new ArrayAdapter<String>(this, R.layout.content_grocery, needtobuy));
+            }
+
+
+        }
+
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,13 +67,13 @@ public class GroceryActivity extends ListActivity {
 
                 if (amount > 0.0 && !ingredientslist[d].contains("Choose")) {
                     needtobuylist.add(""+ amountofingredients[d] +" " +ingredientslist[d]);
+
                  }
             }
 
         }
 
         ArrayList<String> uniqueset= new ArrayList<>();
-
         for(int a =1 ;a<16;a++){
             String ingredient= allIngredients.get(a);
             int length2= needtobuylist.size();
@@ -76,12 +93,10 @@ public class GroceryActivity extends ListActivity {
 
 
         final int length1=uniqueset.size();
-        String[] needtobuy= new String[length1+1];
+         needtobuy= new String[length1+1];
         for(int a =0;a<length1;a++){
             needtobuy[a]= uniqueset.get(a);
         }
-
-
         needtobuy[length1]="<------------Done------------->";
         setListAdapter(new ArrayAdapter<String>(this, R.layout.content_grocery, needtobuy));
 
@@ -89,12 +104,27 @@ public class GroceryActivity extends ListActivity {
             @Override
 
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(position==length1+1){
+                if(position==0){
+
+                }
+                else if(position==length1+1){
+                    Intent intent= new Intent(GroceryActivity.this, MenuActivity.class  );
+                    intent.putExtra("length",needtobuy.length);
+                    intent.putExtra("ingredientstobuy", needtobuy);
+                    setResult(GroceryActivity.RESULT_OK,intent);
                     finish();
+                }else{
+                    Intent intent = new Intent(GroceryActivity.this, EditGroceryActivity.class );
+                    intent.putExtra("info",needtobuy[position-1]);
+                    changedlocation=position-1;
+                    startActivityForResult(intent,9999);
                 }
 
             }
         });
+
+
+
 
     }
     public void initialize(){

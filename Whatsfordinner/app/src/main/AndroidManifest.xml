@@ -73,6 +73,10 @@
         <activity
             android:name=".InformationActivity"
             android:label="@string/title_activity_information"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".EditGroceryActivity"
+            android:label="@string/title_activity_edit_grocery"
             android:theme="@style/AppTheme"></activity>
     </application>
 

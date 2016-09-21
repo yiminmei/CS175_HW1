@@ -17,11 +17,11 @@ import android.widget.Toast;
 
 public class MenuActivity extends AppCompatActivity {
 
-    public ImageView banner;
-    public ArrayList<String> allIngredients= new ArrayList<>();
-    public ArrayList<Dish> alldishes = new ArrayList<>();
-    public ArrayList<Dish> selecteddishes= new ArrayList<>();
-
+    private ImageView banner;
+    private ArrayList<String> allIngredients= new ArrayList<>();
+    private ArrayList<Dish> alldishes = new ArrayList<>();
+    private ArrayList<Dish> selecteddishes= new ArrayList<>();
+    private String[] ingredientstobuy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +29,6 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
         banner=(ImageView)findViewById(R.id.imageView1);
         initiate();
-
-
-
 
         banner.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -41,9 +38,6 @@ public class MenuActivity extends AppCompatActivity {
                 return false;
             }
         });
-
-
-
     }
     public void initiate(){
 
@@ -73,8 +67,26 @@ public class MenuActivity extends AppCompatActivity {
                 "Choose"};
         double[] cc1= {2,3,3,3,0,0,0,0,0,0};
         Dish sampledish2 = new Dish("Grilled Meat",cc,cc1);
+        double[]dd1={ 2,2,6,3,4,0,0,0,0,0};
+        String[] uafteach={allIngredients.get(3),allIngredients.get(2),allIngredients.get(7),
+                allIngredients.get(12),allIngredients.get(10),"Choose","Choose","Choose","Choose",
+                "Choose"};
+
+        double[]ee1={ 2,2,6,3,4,0,0,0,0,0};
+        String[] uafteach1={allIngredients.get(6),allIngredients.get(9),allIngredients.get(15),
+                allIngredients.get(4),allIngredients.get(6),"Choose","Choose","Choose","Choose",
+                "Choose"};
+        Dish sampledish4= new Dish("Thai duck",uafteach1 ,ee1);
+
+        double[]ee11={ 2,2,6,3,4,0,0,0,0,0};
+        String[] uafteach11={allIngredients.get(6),allIngredients.get(9),allIngredients.get(15),
+                allIngredients.get(1),allIngredients.get(6),"Choose","Choose","Choose","Choose",
+                "Choose"};
+        Dish sampledish41= new Dish("Chuyun fish",uafteach11 ,ee11);
         alldishes.add(sampledish1);
         alldishes.add(sampledish2);
+        alldishes.add(sampledish4);
+        alldishes.add(sampledish41);
 
     }
 
@@ -95,6 +107,7 @@ public class MenuActivity extends AppCompatActivity {
                 intent.putExtra(samplename,selecteddishes.get(a).getName() );
                 intent.putExtra(sampleingredientslist, selecteddishes.get(a).getIngredients() );
                 intent.putExtra(sampleamountofingredients, selecteddishes.get(a).getIngredientsAmount());
+
             }
             intent.putExtra("selectedlength",selectedlength);
             startActivityForResult(intent,3333);
@@ -133,6 +146,17 @@ public class MenuActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode==3333){
+            if(resultCode== Activity.RESULT_OK){
+                int length = data.getIntExtra("length",0);
+                ingredientstobuy= new String[   length];
+                String[] ingredients= data.getStringArrayExtra("ingredientstobuy");
+                for(int a = 0 ;a<length ;a++) {
+                    ingredientstobuy[a] = ingredients[a];
+                }
+            }
+        }
 
         if (requestCode == 1111) {
             if(resultCode == Activity.RESULT_OK) {

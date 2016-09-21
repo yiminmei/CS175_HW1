@@ -205,7 +205,8 @@
         android:maxLength="18"
         android:imeOptions="actionDone"
         android:inputType="textCapWords"
-        android:hint="name"/>
+        android:hint="name"
+        android:textColor="@color/blue"/>
 
     <Button
         style="?android:attr/buttonStyleSmall"

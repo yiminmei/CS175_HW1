@@ -25,6 +25,7 @@
     <string name="info"> App by Yimin Mei  ( 010882560)
        WhatsForDinner version 1.01
        Contact information : yimin.mei@sjsu.edu Or visit Website: yimin.wearables.com</string>
+    <string name="title_activity_edit_grocery">EditGroceryActivity</string>
 
 
 </resources>
