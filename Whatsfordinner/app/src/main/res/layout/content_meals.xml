@@ -15,11 +15,339 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="This is MealsActivity"
-        android:id="@+id/textView"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
+        android:text=" Schedule Your Meals"
+        android:id="@+id/textView88"
+        android:textColor="@color/blue"
+        android:textSize="20dp"
+        android:gravity="center_horizontal"
         android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/scrollView2"
+        android:layout_alignEnd="@+id/scrollView2" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:id="@+id/BUTTON1"
+        android:layout_alignTop="@+id/textView88"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:onClick="backtoMenu"
+        android:background="@color/yellow"/>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/BUTTON1"
+        android:id="@+id/scrollView2">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:id="@+id/button51"
+            android:text="Add"
+            android:contentDescription="1"
+            android:background="@color/red"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button51"
+            android:layout_alignParentRight="true"
+            android:id="@+id/button52"
+            android:text="Summary"
+            android:layout_toLeftOf="@id/button52"
+            android:contentDescription="2"
+            android:background="@color/green"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:id="@+id/button53"
+            android:layout_below="@id/button52"
+            android:text="Add"
+            android:contentDescription="3"
+            android:background="@color/red"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button53"
+            android:layout_alignParentRight="true"
+            android:id="@+id/button54"
+            android:text="Summary"
+            android:contentDescription="4"
+            android:background="@color/green"/>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:id="@+id/button55"
+            android:layout_below="@id/button54"
+            android:text="Add"
+            android:contentDescription="5"
+            android:background="@color/red"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button55"
+            android:layout_alignParentRight="true"
+            android:id="@+id/button56"
+            android:text="Summary"
+            android:contentDescription="6"
+            android:background="@color/green"/>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:id="@+id/button57"
+            android:layout_below="@id/button56"
+            android:text="Add"
+            android:contentDescription="7"
+            android:background="@color/red"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button57"
+            android:layout_alignParentRight="true"
+            android:id="@+id/button58"
+            android:text="Summary"
+            android:contentDescription="8"
+            android:background="@color/green"/>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:id="@+id/button59"
+            android:layout_below="@id/button58"
+            android:text="Add"
+            android:contentDescription="9"
+            android:background="@color/red"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button59"
+            android:layout_alignParentRight="true"
+            android:id="@+id/button60"
+            android:text="Summary"
+            android:contentDescription="10"
+            android:background="@color/green"/>
+
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:id="@+id/button61"
+            android:layout_below="@id/button60"
+            android:text="Add"
+            android:contentDescription="11"
+            android:background="@color/red"/>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button61"
+            android:layout_alignParentRight="true"
+            android:id="@+id/button62"
+            android:text="Summary"
+            android:contentDescription="12"
+            android:background="@color/green"/>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:id="@+id/button63"
+            android:layout_below="@id/button62"
+            android:text="Add"
+            android:contentDescription="13"
+            android:background="@color/red"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button63"
+            android:layout_alignParentRight="true"
+            android:id="@+id/button64"
+            android:text="Summary"
+            android:contentDescription="14"
+            android:background="@color/green"/>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textview31"
+            android:layout_alignParentLeft="true"
+            android:text="Monday:"
+            android:layout_toLeftOf="@id/button51"
+            android:textColor="@color/blue"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textview32"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/textview31"
+            android:layout_toLeftOf="@id/button51"
+            android:text="Eating Out"
+            android:textColor="@color/red"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textview53"
+            android:text="Tuesday:"
+            android:textColor="@color/blue"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@id/button53"
+            android:layout_below="@id/button52"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textview34"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/textview53"
+            android:layout_toLeftOf="@id/button53"
+            android:text="Eating Out"
+            android:textColor="@color/red"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textview55"
+            android:text="Wednesday:"
+            android:textColor="@color/blue"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@id/button55"
+            android:layout_below="@id/button54"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textview56"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/textview55"
+            android:layout_toLeftOf="@id/button55"
+            android:text="Eating Out"
+            android:textColor="@color/red"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textview57"
+            android:text="Thursday:"
+            android:textColor="@color/blue"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@id/button57"
+            android:layout_below="@id/button56"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textview38"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/textview57"
+            android:layout_toLeftOf="@id/button57"
+            android:text="Eating Out"
+            android:textColor="@color/red"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textview59"
+            android:textColor="@color/blue"
+            android:text="Friday:"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@id/button59"
+            android:layout_below="@id/button58"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textview60"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/textview59"
+            android:layout_toLeftOf="@id/button59"
+            android:text="Eating Out"
+            android:textColor="@color/red"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textview61"
+            android:text="Saturday:"
+            android:textColor="@color/blue"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@id/button61"
+            android:layout_below="@id/button60"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textview62"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/textview61"
+            android:layout_toLeftOf="@id/button61"
+            android:text="Eating Out"
+            android:textColor="@color/red"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textview63"
+            android:text="Sunday:"
+            android:textColor="@color/blue"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@id/button63"
+            android:layout_below="@id/button62"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textview64"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/textview63"
+            android:layout_toLeftOf="@id/button63"
+            android:text="Eating Out"
+            android:textColor="@color/red"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter Weekly Goals"
+            android:onClick="goGoals"
+            android:id="@+id/button98"
+            android:layout_below="@id/button64"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/button98"
+            android:text="Weekly Summary"
+            android:layout_below="@id/button64"
+            android:onClick="goSummary"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+
+
+
 </RelativeLayout>

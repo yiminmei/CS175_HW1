@@ -62,16 +62,17 @@ public class GroceryActivity extends ListActivity {
             double[] amountofingredients = intent.getDoubleArrayExtra("amountofingredients" + a);
             selecteddishes.add(new Dish(name, ingredientslist, amountofingredients));
 
-            for (int d = 0; d < 10; d++) {
-                double amount= amountofingredients[d];
+                for (int d = 0; d < 10; d++) {
+                    double amount = amountofingredients[d];
 
-                if (amount > 0.0 && !ingredientslist[d].contains("Choose")) {
-                    needtobuylist.add(""+ amountofingredients[d] +" " +ingredientslist[d]);
+                    if (amount > 0.0 && !ingredientslist[d].contains("Choose")) {
+                        needtobuylist.add("" + amountofingredients[d] + " " + ingredientslist[d]);
 
-                 }
+                    }
+                }
+
             }
 
-        }
 
         ArrayList<String> uniqueset= new ArrayList<>();
         for(int a =1 ;a<16;a++){

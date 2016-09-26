@@ -77,6 +77,22 @@
         <activity
             android:name=".EditGroceryActivity"
             android:label="@string/title_activity_edit_grocery"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".AddActivity"
+            android:label="@string/title_activity_add"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".SummaryActivity"
+            android:label="@string/title_activity_summary"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".GoalsActivity"
+            android:label="@string/title_activity_goals"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".WeekSummaryActivity"
+            android:label="@string/title_activity_week_summary"
             android:theme="@style/AppTheme"></activity>
     </application>
 

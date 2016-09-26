@@ -26,6 +26,10 @@
        WhatsForDinner version 1.01
        Contact information : yimin.mei@sjsu.edu Or visit Website: yimin.wearables.com</string>
     <string name="title_activity_edit_grocery">EditGroceryActivity</string>
+    <string name="title_activity_add">AddActivity</string>
+    <string name="title_activity_summary">SummaryActivity</string>
+    <string name="title_activity_goals">GoalsActivity</string>
+    <string name="title_activity_week_summary">WeekSummaryActivity</string>
 
 
 </resources>

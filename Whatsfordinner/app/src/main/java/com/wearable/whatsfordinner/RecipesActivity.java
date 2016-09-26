@@ -45,7 +45,7 @@ public class RecipesActivity extends ListActivity{
             names[a]= alldishes.get(a).getName();
         }
         names[length]= "<------------Done------------->";
-        setListAdapter(new ArrayAdapter<String>(this,R.layout.content_recipes,names));
+
 
         ListView listview = getListView();
         TextView title = new TextView(this);
@@ -57,6 +57,7 @@ public class RecipesActivity extends ListActivity{
         listview.setTextFilterEnabled(true);
         listview.setCacheColorHint(Color.BLUE);
         listview.addHeaderView(title);
+        setListAdapter(new ArrayAdapter<String>(this,R.layout.content_recipes,names));
         final Intent returnintent = new Intent(this, MenuActivity.class);
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

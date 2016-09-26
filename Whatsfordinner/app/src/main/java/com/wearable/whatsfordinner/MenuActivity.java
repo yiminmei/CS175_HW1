@@ -21,7 +21,10 @@ public class MenuActivity extends AppCompatActivity {
     private ArrayList<String> allIngredients= new ArrayList<>();
     private ArrayList<Dish> alldishes = new ArrayList<>();
     private ArrayList<Dish> selecteddishes= new ArrayList<>();
-    private String[] ingredientstobuy;
+    private ArrayList<String> ingredientstobuy;
+    private String[] messages= new String[14];
+    private boolean clickedbefore= false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,7 +98,23 @@ public class MenuActivity extends AppCompatActivity {
 
         if(location==R.id.button1){
             Intent intent = new Intent(MenuActivity.this, MealsActivity.class);
-            startActivity(intent);
+
+            int selectedlength= selecteddishes.size();
+            for(int a=0; a<selectedlength;a++ ){
+                String samplename = "name"+a;
+                String sampleingredientslist= "ingredientslist"+a;
+                String sampleamountofingredients="amountofingredients"+a;
+                intent.putExtra(samplename,selecteddishes.get(a).getName() );
+                intent.putExtra(sampleingredientslist, selecteddishes.get(a).getIngredients() );
+                intent.putExtra(sampleamountofingredients, selecteddishes.get(a).getIngredientsAmount());
+
+            }
+            intent.putExtra("SAVE",messages);
+            intent.putExtra("clickedbefore",clickedbefore);
+            clickedbefore=true;
+            intent.putExtra("selectedlength",selectedlength);
+            selecteddishes.removeAll(selecteddishes);
+            startActivityForResult(intent,4321);
 
         }else if (location==R.id.button3){
             Intent intent = new Intent(MenuActivity.this, GroceryActivity.class);
@@ -125,6 +144,8 @@ public class MenuActivity extends AppCompatActivity {
                 intent.putExtra(samplename,alldishes.get(a).getName() );
                 intent.putExtra(sampleingredientslist, alldishes.get(a).getIngredients() );
                 intent.putExtra(sampleamountofingredients, alldishes.get(a).getIngredientsAmount());
+
+
             }
             intent.putExtra("length",length);
             startActivityForResult(intent,2222);
@@ -147,17 +168,31 @@ public class MenuActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode==3333){
-            if(resultCode== Activity.RESULT_OK){
+        if(requestCode==4321){
+            if(resultCode==RESULT_OK){
+                messages= data.getStringArrayExtra("saves");
                 int length = data.getIntExtra("length",0);
-                ingredientstobuy= new String[   length];
-                String[] ingredients= data.getStringArrayExtra("ingredientstobuy");
-                for(int a = 0 ;a<length ;a++) {
-                    ingredientstobuy[a] = ingredients[a];
+
+                for(int a =0 ;a<length ;a++ ){
+                    String name= data.getStringExtra("name"+a);
+                    double[] amount=data.getDoubleArrayExtra( "amount"+a);
+                    String[] ingredients= data.getStringArrayExtra("ingredients"+a);
+                    selecteddishes.add(new Dish(name,ingredients,amount));
                 }
+
             }
         }
 
+
+        if(requestCode==3333){
+            if(resultCode== Activity.RESULT_OK){
+                int length = data.getIntExtra("length",0);
+                ingredientstobuy= new ArrayList<>();
+                String[] ingredients= data.getStringArrayExtra("ingredientstobuy");
+
+
+            }
+        }
         if (requestCode == 1111) {
             if(resultCode == Activity.RESULT_OK) {
                 Dish newdish= new Dish();
@@ -177,6 +212,8 @@ public class MenuActivity extends AppCompatActivity {
                     String directions = data.getStringExtra("directions");
                     selecteddishes.add( new Dish(name,ingredientslist,amountofingredients ));
                     selecteddishes.get(a).setDirections(directions);
+
+
                 }
                 alldishes.clear();
                 int length1= data.getIntExtra("alldishlength",0);
@@ -188,13 +225,11 @@ public class MenuActivity extends AppCompatActivity {
 
                     alldishes.add( new Dish(name,ingredientslist,amountofingredients));
                     alldishes.get(b-10).setDirections(directions);
-
                 }
-
-
-
             }
         }
+
+
 
 
     }
